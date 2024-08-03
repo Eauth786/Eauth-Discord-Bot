@@ -3,6 +3,7 @@ import requests
 import os
 import json
 
+# Required configuration
 bottoken = ""  # Your Discord bot token
 appkey = "" # Your application key goes here
 acckey = "" # Your account key goes here
