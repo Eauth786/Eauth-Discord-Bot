@@ -47,7 +47,7 @@ async def getvar(ctx: interactions.CommandContext, varid: str):
   response = requests.get("https://eauth.us.to/api/command.php?sort=variable&varid=" +
                           var + "&appkey=" + appkey + "&acckey=" + acckey + "&apptoken=" + apptoken + "&appid=" + appid + "&userid=" + userid + "&serverid=" + serverid + "",
                           headers=headers)
-  await ctx.send(f"`{response.text}`")
+  await ctx.send(response.text)
 
 
 @bot.command(
@@ -91,7 +91,7 @@ async def genkey(ctx: interactions.CommandContext, rank: str, expire: str,
                           "&rank=" + rank + "&expire=" + expire + "&length=" +
                           length + "&prefix=" + prefix + "",
                           headers=headers)
-  await ctx.send(f"`{response.text}`")
+  await ctx.send(response.text)
 
 @bot.command(
   name="delkey",
@@ -319,4 +319,4 @@ async def resethwid(ctx: interactions.CommandContext, username: str):
                           headers=headers)
   await ctx.send(response.text)
 
-bot.start()
+bot.start() # Launch the bot
